@@ -10,15 +10,15 @@
 
 | Nombre                                                        | Apellido                                                            | DNI      |
 | ------------------------------------------------------------- | ------------------------------------------------------------------- | -------- |
-| [Lola](https://www.linkedin.com/in/lolarod/ "Linkedin")       | [Rodriguez Farias](https://www.linkedin.com/in/lolarod/ "Linkedin") | 47345708 |
-| [Diego](https://www.linkedin.com/in/floresdiegoa/ "Linkedin") | [Flores Nube](https://www.linkedin.com/in/floresdiegoa/ "Linkedin") | 95034804 |
-| [Andres](https://www.linkedin.com/in/andywclav/ "Linkedin")   | [Clavijo Rojas](https://www.linkedin.com/in/andywclav/ "Linkedin")  | 19110862 |
+| [Lola](https://www.linkedin.com/in/lolarod/ "Linkedin")       | Rodriguez Farias | 47345708 |
+| [Diego](https://www.linkedin.com/in/floresdiegoa/ "Linkedin") | Flores Nube | 95034804 |
+| [Andres](https://www.linkedin.com/in/andywclav/ "Linkedin")   | Clavijo Rojas | 19110862 |
 
 ![LOGO](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5CbKJff6vOkNO7ZYgy9W8c6zTeXBT_qvQmw&s "EQUIPAZO")
 
 # PROYECTO **_`Sistema de venta de ropa de segunda mano.`_**
 
-<!-- ver esto -->
+<!-- TODO: REVER ESTO  -->
 
 > El objetivo de este sistema es el de ayudar al cliente a poder organizar su ropa de segunda mano o con fallas de fabrica, de forma fácil y rápida para la venta de las mismas.
 
@@ -85,8 +85,8 @@ CREATE TABLE IF NOT EXISTS Pedido(
  ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
  ID_Cliente INT NOT NULL,
  ID_Pago INT NOT NULL,
- Cantidad_Productos INT(2),  # Deberia ir tambien Precio unitario por producto? 
- Fecha_Pedido DATETIME, # DATATIME YYYY-MM-DD HH:MM:SS
+ Cantidad_Productos INT(2),
+ Fecha_Pedido DATETIME,
  Valor_Total DECIMAL(10, 2),
  Estado ENUM('pendiente', 'enviado', 'entregado'),
  FOREIGN KEY (ID_Cliente) REFERENCES lobos.Clientes(ID),
