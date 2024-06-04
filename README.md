@@ -167,8 +167,7 @@ SELECT Nombre, Precio_Unitario FROM Productos WHERE Precio_Unitario <= 5000;
 
 ## **_DIAGRAMA ENTIDAD RELACION (DER)_**
 
-> [!IMPORTANT]
-> Proximamente.
+![DIAGRAMA ENTIDAD RELACION](img/DER.jpeg)
 
 ## **_DIAGRAMA DE TABLAS NORMALIZADO EN 3ra FORMA NORMAL_**
 
