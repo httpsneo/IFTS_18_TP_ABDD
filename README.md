@@ -16,7 +16,9 @@
 
 ![LOGO](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5CbKJff6vOkNO7ZYgy9W8c6zTeXBT_qvQmw&s "EQUIPAZO")
 
-# PROYECTO **_`Sistema de venta de ropa de segunda mano.`_**
+# PROYECTO 
+
+**_`Sistema de venta de ropa de segunda mano.`_**
 
 <!-- TODO: REVER ESTO  -->
 
