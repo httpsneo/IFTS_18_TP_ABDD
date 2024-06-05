@@ -1,4 +1,4 @@
-![LOGO]( "LOGO")
+![LOGO](img/logo.JPG "IFTS N°18")
 
 # 📚 TRABAJO PRACTICO ADMINISTRACIÓN DE BASES DE DATOS
 
@@ -136,7 +136,7 @@ VALUES
 ```
 
 > [!IMPORTANT]
-> Faltan completar datos de tablas.
+> Faltan ingresar datos a tablas.
 
 ## **_REPORTES_**
 
