@@ -1,0 +1,24 @@
+{
+  "name": "ifts_18_tp_abdd",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Trabajo Práctico",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "AndywClav",
+  "license": "ISC",
+  "dependencies": {
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.9.3",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.4.5"
+  }
+}
