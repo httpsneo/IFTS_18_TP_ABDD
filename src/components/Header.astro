@@ -8,11 +8,11 @@
         aria-label="Global"
     >
         <div class="flex lg:flex-1">
-            <a href="#" class="-m-1.5 p-1.5">
+            <a href="#1" class="menu-button -m-1.5 p-1.5">
                 <span class="sr-only">Your Company</span>
                 <img
-                    class="h-8 w-auto"
-                    src="https://cdn.pixabay.com/photo/2017/02/23/19/02/carnival-2092943_1280.png"
+                    class="h-20 w-auto"
+                    src="https://static.vecteezy.com/system/resources/previews/042/240/885/non_2x/ai-generated-3d-portrait-of-baby-wolf-isolated-on-transparent-background-generative-ai-free-png.png"
                     alt=""
                 />
             </a>
@@ -42,6 +42,7 @@
             <div class="relative">
                 <button
                     type="button"
+                    id="menu-button-click"
                     class="menu-button flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900"
                     aria-expanded="false"
                 >
@@ -129,7 +130,7 @@
                                     href="#"
                                     class="block font-semibold text-gray-900"
                                 >
-                                    Buzos
+                                    Buzos / Camperas
                                     <span class="absolute inset-0"></span>
                                 </a>
                                 <p class="mt-1 text-gray-600">
@@ -163,7 +164,7 @@
                                     href="#"
                                     class="block font-semibold text-gray-900"
                                 >
-                                    Camperas
+                                    Accesorios 
                                     <span class="absolute inset-0"></span>
                                 </a>
                                 <p class="mt-1 text-gray-600">
@@ -243,12 +244,16 @@
                 </div>
             </div>
 
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900 menu-button"
+            <a
+                href="#"
+                class="text-sm font-semibold leading-6 text-gray-900 menu-button"
                 >Sobre Nosotros</a
             >
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900 menu-button"
+            <a
+                href="#"
+                class="text-sm font-semibold leading-6 text-gray-900 menu-button"
                 >Iniciar Sesión <span aria-hidden="true">&rarr;</span></a
             >
         </div>
@@ -261,14 +266,6 @@
             class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
         >
             <div class="flex items-center justify-between">
-                <a href="#" class="-m-1.5 p-1.5">
-                    <span class="sr-only">Your Company</span>
-                    <img
-                        class="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                        alt=""
-                    />
-                </a>
                 <button
                     type="button"
                     class="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -294,6 +291,14 @@
 </header>
 
 <style>
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 3;    
+        background-color: #E2D9FB;
+        transition: top 0.3s ease-in-out;
+    }
+
     .menu-button {
         cursor: pointer;
         position: relative;
@@ -306,13 +311,41 @@
 </style>
 
 <script>
-    const hover = document.querySelector("#menu-button",) as HTMLButtonElement | null; // modify because we have arrays in the elemnents 
-    const hide = document.querySelector("#menu-items") as HTMLDivElement | null;
+    const buttonClick = document.querySelector(
+        "#menu-button-click",
+    ) as HTMLDivElement | null;
+    const menuItems = document.querySelector(
+        "#menu-items",
+    ) as HTMLDivElement | null;
 
-    hover?.addEventListener("click", () => {
-        if (hide) {
-            hide.style.display =
-                hide.style.display === "block" ? "none" : "block";
+    if (buttonClick && menuItems) {
+        buttonClick.addEventListener("click", () => {
+            if (menuItems.style.display === "block") {
+                menuItems.style.display = "none";
+            } else {
+                menuItems.style.display = "block";
+            }
+        });
+    }
+
+    let lastScrollTop = 0;
+
+    window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const header = document.querySelector('header') as HTMLElement | null;
+
+    if (header) {
+        if (currentScroll > lastScrollTop) {
+            // Scrolleando hacia abajo
+            header.style.top = "-130px"; // Ocultar el encabezado
+        } else {
+            // Scrolleando hacia arriba
+            header.style.top = "0"; // Mostrar el encabezado
         }
-    });
+    }
+
+    lastScrollTop = currentScroll;
+});
+
+
 </script>
