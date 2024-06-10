@@ -11,8 +11,8 @@
 | Nombre                                                        | Apellido                                                            | DNI      |
 | ------------------------------------------------------------- | ------------------------------------------------------------------- | -------- |
 | [Lola](https://www.linkedin.com/in/lolarod/ "Linkedin")       | Rodriguez Farias | 47345708 |
-| [Diego](https://www.linkedin.com/in/floresdiegoa/ "Linkedin") | Flores Nube | 95034804 |
 | [Andres](https://www.linkedin.com/in/andywclav/ "Linkedin")   | Clavijo Rojas | 19110862 |
+| [Diego](https://www.linkedin.com/in/floresdiegoa/ "Linkedin") | Flores Nube | 95034804 |
 
 ![LOGO](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5CbKJff6vOkNO7ZYgy9W8c6zTeXBT_qvQmw&s "EQUIPAZO")
 
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS Productos(
  Nombre VARCHAR(30),
  Descripción TEXT,
  Precio_Unitario DECIMAL(10, 2),
- Categoría ENUM('remera', 'buzo', 'pantalon', 'zapatillas', 'accesorio'),
+ Categoría ENUM('remeras', 'buzos/camperas', 'pantalones', 'zapatillas', 'accesorios'),
  Stock INT(1),
  Estado ENUM('falla de fabrica', 'usado'),
  Fecha_Alta DATE
