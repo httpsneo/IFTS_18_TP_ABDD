@@ -1,43 +1,12 @@
-![LOGO](img/logo.JPG "IFTS N°18")
+# Creamos tabla 
+CREATE DATABASE IFTS_N18_ADB_TP_ALFA_LOBO;
 
-# 📚 TRABAJO PRACTICO ADMINISTRACIÓN DE BASES DE DATOS
-
-## 👨‍🏫 PROFESOR: **Emanuel Alejandro Odstrcil**
-
-### 🧑 Nombre del equipo: **Alfa buena maravilla onda dinamita escuadrón LOBO**
-
-### 🚀 Integrantes del equipo
-
-| Nombre                                                        | Apellido                                                            | DNI      |
-| ------------------------------------------------------------- | ------------------------------------------------------------------- | -------- |
-| [Lola](https://www.linkedin.com/in/lolarod/ "Linkedin")       | Rodriguez Farias | 47345708 |
-| [Andres](https://www.linkedin.com/in/andywclav/ "Linkedin")   | Clavijo Rojas | 19110862 |
-| [Diego](https://www.linkedin.com/in/floresdiegoa/ "Linkedin") | Flores Nube | 95034804 |
-
-![LOGO](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5CbKJff6vOkNO7ZYgy9W8c6zTeXBT_qvQmw&s "EQUIPAZO")
-
-# PROYECTO
-
-**_`Sistema de venta de ropa de segunda mano.`_**
-
-<!-- TODO: REVER ESTO  -->
-
-> El objetivo de este sistema es el de ayudar al cliente a poder organizar su ropa de segunda mano o con fallas de fabrica, de forma fácil y rápida para la venta de las mismas.
-
-## **_CREACION DE LA BASE DE DATOS_**
-
-```sql
-CREATE DATABASE IF NOT EXISTS IFTS_N18_ADB_TP_ALFA_LOBO;
+# Ponemos en uso la tabla
 USE IFTS_N18_ADB_TP_ALFA_LOBO;
-```
 
-## **_CREACION DE LAS TABLAS_**
-
-`Tabla de Clientes`
-
-```sql
+# Creamos la tabla Clientes
 CREATE TABLE IF NOT EXISTS Clientes(
-   ID_Clientes INT NOT NULL PRIMARY KEY AUTO_INCREMENT,  
+	ID_Clientes INT NOT NULL PRIMARY KEY AUTO_INCREMENT,  
    DNI INT(9) NOT NULL UNIQUE,
    Nombre VARCHAR(30) NOT NULL,
    Apellido VARCHAR(50) NOT NULL,
@@ -47,120 +16,85 @@ CREATE TABLE IF NOT EXISTS Clientes(
    Sexo CHAR(1),
    Fecha_Nacimiento DATE
 );
-```
 
-### **_Condiciones que deben cumplirse para una aceptacion de usuario_**
-
-- Tener una edad igual o mayor a 16 años
-- Contar con un correo electrónico válido (Se necesita confirmación de correo electrónico)
-- Contar con una contraseña válida (Minimo de 8 caracteres)
-
-`Tabla de estados de los pedidos`
-
-```sql
+# Creamos la tabla Estados
 CREATE TABLE IF NOT EXISTS Estados_Productos(
-    ID_Estados INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    Estado VARCHAR(15)
+	ID_Estados INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	Estado VARCHAR(15)
 );
-```
 
-`Tabla de categorias de los productos`
-
-```sql
+# Creamos la tabla Categorias
 CREATE TABLE IF NOT EXISTS Categorias_Productos(
-    ID_Categorias INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    Estado VARCHAR(15)
+	ID_Categorias INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	Estado VARCHAR(15)
 );
-```
 
-`Tabla de los Productos`
-
-```sql
+# Creamos la tabla Productos
 CREATE TABLE IF NOT EXISTS Productos (
-    ID_Productos INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    Nombre VARCHAR(30),
-    Descripcion TEXT,
-    Precio_Unitario DECIMAL(10, 2),
-    Stock BOOLEAN,
-    Fecha_Alta DATE,
-    ID_Estado_Producto INT NOT NULL,
-    ID_Categoria INT NOT NULL,
-    FOREIGN KEY (ID_Estado_Producto) REFERENCES lobos.estados_productos(ID_Estados),
-    FOREIGN KEY (ID_Categoria) REFERENCES lobos.categorias_productos(ID_Categorias)
+	ID_Productos INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	Nombre VARCHAR(30),
+	Descripcion TEXT,
+	Precio_Unitario DECIMAL(10, 2),
+	Stock BOOLEAN,
+	Fecha_Alta DATE,
+	ID_Estado_Producto INT NOT NULL,
+	ID_Categoria INT NOT NULL,
+	FOREIGN KEY (ID_Estado_Producto) REFERENCES IFTS_N18_ADB_TP_ALFA_LOBO.estados_productos(ID_Estados),
+	FOREIGN KEY (ID_Categoria) REFERENCES IFTS_N18_ADB_TP_ALFA_LOBO.categorias_productos(ID_Categorias)
 );
-```
 
-`Tabla de Metodos de Pago`
-
-```sql
+# Creamos la tabla Metodo_Pago
 CREATE TABLE IF NOT EXISTS Metodo_Pagos(
-    ID_Metodo_Pago INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    Tipo_Pago VARCHAR(15) NOT NULL
+	ID_Metodo_Pago INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	Tipo_Pago VARCHAR(15) NOT NULL
 );
-```
 
-`Tabla de estados de pagos`
-
-```sql
+# Creamos la tabla Estado_Pagos
 CREATE TABLE IF NOT EXISTS Estado_Pagos(
-    ID_Estado_Pago INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    Tipo_Pago VARCHAR(15) NOT NULL
+	ID_Estado_Pago INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	Tipo_Pago VARCHAR(15) NOT NULL
 );
-```
 
-`Tabla de estados de pedidos`
-
-```sql
-CREATE TABLE IF NOT EXISTS Estado_Pagos(
-    ID_Estado_Pago INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    Tipo_Pago VARCHAR(15) NOT NULL
-);
-```
-
-`Tabla de pedidos`
-
-```sql
+# Creamos la tabla Pedidos
 CREATE TABLE IF NOT EXISTS Pedidos(
-    ID_Pedidos INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    ID_Cliente INT NOT NULL,
-    ID_Estado_Pago INT NOT NULL,
-    ID_Metodo_Pago INT NOT NULL,
-    Cantidad_Productos INT(2),
-    Fecha_Pedido DATETIME, 
-    Valor_Total DECIMAL(10, 2),
-    FOREIGN KEY (ID_Cliente) REFERENCES lobos.Clientes(ID_Clientes),
-    FOREIGN KEY (ID_Metodo_Pago) REFERENCES lobos.Metodo_pagos(ID_Metodo_Pago),
-    FOREIGN KEY (ID_Estado_Pago) REFERENCES lobos.Estado_Pagos(ID_Estado_Pago)
+	ID_Pedidos INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	ID_Cliente INT NOT NULL,
+	ID_Estado_Pago INT NOT NULL,
+	ID_Metodo_Pago INT NOT NULL,
+	Cantidad_Productos INT(2),
+	Fecha_Pedido DATETIME, 
+	Valor_Total DECIMAL(10, 2),
+	FOREIGN KEY (ID_Cliente) REFERENCES IFTS_N18_ADB_TP_ALFA_LOBO.Clientes(ID_Clientes),
+	FOREIGN KEY (ID_Metodo_Pago) REFERENCES IFTS_N18_ADB_TP_ALFA_LOBO.Metodo_pagos(ID_Metodo_Pago),
+	FOREIGN KEY (ID_Estado_Pago) REFERENCES IFTS_N18_ADB_TP_ALFA_LOBO.Estado_Pagos(ID_Estado_Pago)
 );
-```
 
-`Tabla del carrito`
+#Creamos la tabla estado del pedido
+CREATE TABLE IF NOT EXISTS Estado_Pedidos (
+	ID_Estado_Pedido INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	Estado VARCHAR(20)
+);
 
-```sql
+# Creamos la tabla Detalle_Pedido / carrito
 CREATE TABLE IF NOT EXISTS Detalle_Pedidos(
-    ID_Detalle_Pedidos INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    ID_Pedido INT NOT NULL, 
-    ID_Producto INT NOT NULL,
-    FOREIGN KEY (ID_PEDIDO) REFERENCES lobos.pedidos(ID_Pedidos),
-    FOREIGN KEY (ID_PRODUCTO) REFERENCES lobos.productos(ID_Productos)
+	ID_Detalle_Pedidos INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	ID_Pedido INT NOT NULL, 
+	ID_Producto INT NOT NULL,
+	ID_Estado_Pedido INT NOT NULL,
+	FOREIGN KEY (ID_Pedido) REFERENCES IFTS_N18_ADB_TP_ALFA_LOBO.pedidos(ID_Pedidos),
+	FOREIGN KEY (ID_Producto) REFERENCES IFTS_N18_ADB_TP_ALFA_LOBO.productos(ID_Productos),
+	FOREIGN KEY (ID_Estado_Pedido) REFERENCES IFTS_N18_ADB_TP_ALFA_LOBO.estado_pedidos(ID_Estado_Pedido)
 );
-```
 
-## INGRESAMOS DATOS A LA BASE DE DATOS <sup>by: Chatgpt and us</sup>
-
-`Ingresamos estados disponibles de los productos`
-
-```sql
+----------------------------------------INGRESO DE DATOS------------------------------------------------------------------
+# Ingresamos datos a la tabla Estados
 INSERT INTO Estados_Productos (Estado)
 VALUES 
 ('usado'),
 ('fallo fabrica')
 ;
-```
 
-`Ingresamos categorias disponibles de los productos`
-
-```sql
+# Ingresamos datos a la tabla Categoria
 INSERT INTO Categorias_Productos (Estado)
 VALUES 
 ('remeras'),
@@ -169,11 +103,8 @@ VALUES
 ('zapatillas'),
 ('accesorios')
 ;
-```
 
-`Ingresamos metodos disponibles de pagos`
-
-```sql
+# Ingresamos datos a la tabla Metodo_Pago
 INSERT INTO Metodo_Pagos (Tipo_Pago)
 VALUES 
 ('Efectivo'),
@@ -182,11 +113,8 @@ VALUES
 ('Transferencia'),
 ('PayPal')
 ;
-```
 
-`Ingresamos estados disponibles de los pagos`
-
-```sql
+# Ingresamos datos a la tabla Estado_Pago
 INSERT INTO Estado_Pagos (Tipo_Pago)
 VALUES 
 ('pendiente'),
@@ -194,11 +122,8 @@ VALUES
 ('fallido'),
 ('reembolsado')
 ;
-```
 
-`Ingresamos productos a la base de datos`
-
-```sql
+# Ingresamos datos a la tabla Productos
 INSERT INTO Productos (Nombre, Descripcion, Precio_Unitario, Stock, Fecha_Alta, ID_Estado_Producto, ID_Categoria)
 VALUES 
 ('Remera H&M', 'Remera rosa oversize', 14000.00, TRUE, '2023-01-10', 1, 1),
@@ -222,11 +147,9 @@ VALUES
 ('Guantes de Invierno', 'Guantes abrigados para el frío', 1200.00, TRUE, '2023-07-15', 1, 5),
 ('Calcetines de Algodón', 'Pack de 3 pares de calcetines', 900.00, TRUE, '2023-08-20', 1, 5)
 ;
-```
 
-`Ingresamos clientes a la base de datos`
 
-```sql
+# Ingresamos datos a la tabla Clientes
 INSERT INTO Clientes (DNI, Nombre, Apellido, Direccion, Email, Telefono, Sexo, Fecha_Nacimiento)
 VALUES 
 (94034804, 'Diego Alexandro', 'Flores Nube', 'Quito 4340', 'Floresnubediego@gmail.com', '11 5142-7181', 'M', '1990-05-15'),
@@ -242,11 +165,8 @@ VALUES
 (47345708, 'Lola', 'Commenge', 'Matienzo 1643', 'lolarod@example.com', '11 6032-8221', 'X', '2006-06-14'),
 (19110862, 'Andres', 'Rodriguez', 'Calle Falsa 123', 'meencanta@example.com', '11 2756-6586', 'M', '1900-06-30')
 ;
-```
 
-`Ingresamos estados disponibles de los pedidos`
-
-```sql
+# Ingresamos datos a la tabla Pedidos
 INSERT INTO Estado_Pedidos (Estado)
 VALUES 
 ('en preparacion'),
@@ -255,11 +175,8 @@ VALUES
 ('entregado'),
 ('reembolsado')
 ;
-```
 
-`Ingresamos pedidos a la base de datos`
-
-```sql
+# Ingresamos datos a la tabla Pedidos
 INSERT INTO Pedidos (ID_Cliente, ID_Estado_Pago, ID_Metodo_Pago, Cantidad_Productos, Fecha_Pedido, Valor_Total)
 VALUES
 (1, 2, 1, 2, '2024-01-10 10:00:00', 28000.00),
@@ -273,11 +190,8 @@ VALUES
 (9, 2, 4, 1, '2024-09-20 08:00:00', 5400.00),
 (10, 2, 5, 1, '2024-10-25 17:30:00', 6000.00)
 ;
-```
-
-`Ingresamos los detalles de los pedidos`
-
-```sql
+SELECT * FROM pedidos;
+# Ingresamos datos a la tabla Detalle_Pedidos
 INSERT INTO Detalle_Pedidos (ID_Pedido, ID_Producto, ID_Estado_Pedido)
 VALUES
 (1, 3, 1), (1, 8, 2),
@@ -291,13 +205,8 @@ VALUES
 (9, 10, 2),
 (10, 1, 3)
 ;
-```
-
-## **_REPORTES_**
-
-### - Listar nombre de clientes, cantidad de productos y valor total de los pedidos con estado pendiente
-
-```sql
+-----------------------------------------------------CONSULTAS_SQL---------------------------------------------------------
+# Listar nombre de clientes, cantidad de productos y valor total de los pedidos con estado pendiente
 SELECT 
     Clientes.Nombre AS Nombre_Cliente,  
     Pedidos.Cantidad_Productos, 
@@ -314,45 +223,9 @@ JOIN
     Estado_Pedidos ON Detalle_Pedidos.ID_Estado_Pedido = Estado_Pedidos.ID_Estado_Pedido
 WHERE 
     Estado_Pedidos.Estado = 'pendiente de envio';
-```
-
-### - Listar todos los productos con precio menor o igual a $ 5000
-
-```sql
+    
+# Listar todos los productos con precio menor o igual a $ 5000
 SELECT Nombre, Precio_Unitario FROM Productos WHERE Precio_Unitario <= 5000.00;
-```
 
-### - Listar el total de ventas por mes
-
-```sql
+# Listar el total de ventas por mes
 SELECT MONTH(Fecha_Pedido) AS Mes, YEAR(Fecha_Pedido) AS Año, COUNT(*) AS Total_Ventas FROM Pedidos GROUP BY YEAR(Fecha_Pedido), MONTH(Fecha_Pedido) ORDER BY Año, Mes;
-```
-
-## **_DIAGRAMA ENTIDAD RELACION <sup>(DER)</sup>_**
-
-![DIAGRAMA ENTIDAD RELACION](img/DER.jpeg)
-
-## **_DIAGRAMA DE TABLAS NORMALIZADO <sup>en 3ra forma normal_</sup>**
-
-> [!IMPORTANT]
-> Proximamente.
-
-## **_DICCIONARIO DE DATOS_**
-
-> [!NOTE]
-> Puedes Descargarlo aqui: [Diccionario de datos](database/Diccionario%20de%20datos%20TP.sql "Diccionario de datos")
-
-## **_PRESENTACION DEL PROYECTO <sup>en ppt</sup>_**
-
-> [!IMPORTANT]
-> Proximamente con link de descarga.
-
-## COLABORADORES
-
-![AVATAR](img/165189407.jpeg "Lola Rodriguez")
-
-[@LolaRodriguez](https://github.com/Loluok "Github")
-
-![AVATAR](img/104153258.jpeg "Andres Clavijo")
-
-[@AndresClavijo](https://github.com/AndywClav "Github")

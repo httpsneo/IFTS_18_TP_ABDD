@@ -14,7 +14,7 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Volcando datos para la tabla lobos.categorias_productos: ~5 rows (aproximadamente)
+-- Volcando datos para la tabla ifts_n18_adb_tp_alfa_lobo.categorias_productos: ~5 rows (aproximadamente)
 INSERT INTO `categorias_productos` (`ID_Categorias`, `Estado`) VALUES
 	(1, 'remeras'),
 	(2, 'buzo/camperas'),
@@ -22,7 +22,7 @@ INSERT INTO `categorias_productos` (`ID_Categorias`, `Estado`) VALUES
 	(4, 'zapatillas'),
 	(5, 'accesorios');
 
--- Volcando datos para la tabla lobos.clientes: ~12 rows (aproximadamente)
+-- Volcando datos para la tabla ifts_n18_adb_tp_alfa_lobo.clientes: ~12 rows (aproximadamente)
 INSERT INTO `clientes` (`ID_Clientes`, `DNI`, `Nombre`, `Apellido`, `Direccion`, `Email`, `Telefono`, `Sexo`, `Fecha_Nacimiento`) VALUES
 	(1, 94034804, 'Diego Alexandro', 'Flores Nube', 'Quito 4340', 'Floresnubediego@gmail.com', '11 5142-7181', 'M', '1990-05-15'),
 	(2, 12345678, 'María', 'García Pérez', 'Calle Mayor 123', 'maria@example.com', '12 3456-7890', 'F', '1985-10-20'),
@@ -37,39 +37,48 @@ INSERT INTO `clientes` (`ID_Clientes`, `DNI`, `Nombre`, `Apellido`, `Direccion`,
 	(11, 47345708, 'Lola', 'Commenge', 'Matienzo 1643', 'lolarod@example.com', '11 6032-8221', 'X', '2006-06-14'),
 	(12, 19110862, 'Andres', 'Rodriguez', 'Calle Falsa 123', 'meencanta@example.com', '11 2756-6586', 'M', '1900-06-30');
 
--- Volcando datos para la tabla lobos.detalle_pedidos: ~17 rows (aproximadamente)
-INSERT INTO `detalle_pedidos` (`ID_Detalle_Pedidos`, `ID_Pedido`, `ID_Producto`) VALUES
-	(1, 1, 3),
-	(2, 1, 5),
-	(3, 2, 1),
-	(4, 3, 4),
-	(5, 3, 7),
-	(6, 3, 8),
-	(7, 4, 10),
-	(8, 4, 6),
-	(9, 5, 18),
-	(10, 6, 2),
-	(11, 7, 9),
-	(12, 7, 11),
-	(13, 8, 12),
-	(14, 8, 13),
-	(15, 9, 14),
-	(16, 10, 15),
-	(17, 10, 16);
+-- Volcando datos para la tabla ifts_n18_adb_tp_alfa_lobo.detalle_pedidos: ~0 rows (aproximadamente)
+INSERT INTO `detalle_pedidos` (`ID_Detalle_Pedidos`, `ID_Pedido`, `ID_Producto`, `ID_Estado_Pedido`) VALUES
+	(1, 1, 3, 1),
+	(2, 1, 8, 2),
+	(3, 2, 2, 3),
+	(4, 3, 3, 4),
+	(5, 3, 10, 5),
+	(6, 3, 12, 1),
+	(7, 4, 4, 2),
+	(8, 5, 5, 3),
+	(9, 5, 6, 4),
+	(10, 5, 7, 5),
+	(11, 5, 11, 1),
+	(12, 5, 13, 2),
+	(13, 6, 7, 3),
+	(14, 6, 14, 4),
+	(15, 7, 8, 5),
+	(16, 8, 9, 1),
+	(17, 9, 10, 2),
+	(18, 10, 1, 3);
 
--- Volcando datos para la tabla lobos.estados_productos: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla ifts_n18_adb_tp_alfa_lobo.estados_productos: ~2 rows (aproximadamente)
 INSERT INTO `estados_productos` (`ID_Estados`, `Estado`) VALUES
 	(1, 'usado'),
 	(2, 'fallo fabrica');
 
--- Volcando datos para la tabla lobos.estado_pagos: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla ifts_n18_adb_tp_alfa_lobo.estado_pagos: ~4 rows (aproximadamente)
 INSERT INTO `estado_pagos` (`ID_Estado_Pago`, `Tipo_Pago`) VALUES
 	(1, 'pendiente'),
 	(2, 'completado'),
 	(3, 'fallido'),
 	(4, 'reembolsado');
 
--- Volcando datos para la tabla lobos.metodo_pagos: ~5 rows (aproximadamente)
+-- Volcando datos para la tabla ifts_n18_adb_tp_alfa_lobo.estado_pedidos: ~0 rows (aproximadamente)
+INSERT INTO `estado_pedidos` (`ID_Estado_Pedido`, `Estado`) VALUES
+	(1, 'en preparacion'),
+	(2, 'pendiente de envio'),
+	(3, 'enviado'),
+	(4, 'entregado'),
+	(5, 'reembolsado');
+
+-- Volcando datos para la tabla ifts_n18_adb_tp_alfa_lobo.metodo_pagos: ~5 rows (aproximadamente)
 INSERT INTO `metodo_pagos` (`ID_Metodo_Pago`, `Tipo_Pago`) VALUES
 	(1, 'Efectivo'),
 	(2, 'Tarjeta'),
@@ -77,20 +86,20 @@ INSERT INTO `metodo_pagos` (`ID_Metodo_Pago`, `Tipo_Pago`) VALUES
 	(4, 'Transferencia'),
 	(5, 'PayPal');
 
--- Volcando datos para la tabla lobos.pedidos: ~10 rows (aproximadamente)
+-- Volcando datos para la tabla ifts_n18_adb_tp_alfa_lobo.pedidos: ~0 rows (aproximadamente)
 INSERT INTO `pedidos` (`ID_Pedidos`, `ID_Cliente`, `ID_Estado_Pago`, `ID_Metodo_Pago`, `Cantidad_Productos`, `Fecha_Pedido`, `Valor_Total`) VALUES
-	(1, 1, 2, 2, 2, '2023-12-01 10:30:00', 45000.00),
-	(2, 2, 1, 1, 1, '2023-12-02 14:00:00', 14000.00),
-	(3, 3, 2, 3, 3, '2023-12-03 16:45:00', 61000.00),
-	(4, 4, 4, 4, 2, '2023-12-04 18:20:00', 16000.00),
-	(5, 5, 2, 5, 1, '2023-12-05 20:10:00', 3000.00),
-	(6, 6, 3, 1, 1, '2023-12-06 08:15:00', 2500.00),
-	(7, 7, 2, 2, 2, '2023-12-07 09:45:00', 11000.00),
-	(8, 8, 1, 3, 2, '2023-12-08 11:30:00', 15000.00),
-	(9, 9, 2, 4, 1, '2023-12-09 12:00:00', 4500.00),
-	(10, 10, 2, 5, 2, '2023-12-10 13:20:00', 5700.00);
+	(1, 1, 2, 1, 2, '2024-01-10 10:00:00', 28000.00),
+	(2, 2, 1, 2, 1, '2024-02-15 15:30:00', 2500.00),
+	(3, 3, 2, 3, 3, '2024-03-20 12:45:00', 32000.00),
+	(4, 4, 3, 4, 1, '2024-04-25 14:00:00', 4000.00),
+	(5, 5, 1, 5, 5, '2024-05-30 09:30:00', 10500.00),
+	(6, 6, 2, 1, 2, '2024-06-05 11:15:00', 5700.00),
+	(7, 7, 3, 2, 1, '2024-07-10 16:00:00', 5000.00),
+	(8, 8, 4, 3, 1, '2024-08-15 13:45:00', 12000.00),
+	(9, 9, 2, 4, 1, '2024-09-20 08:00:00', 5400.00),
+	(10, 10, 2, 5, 1, '2024-10-25 17:30:00', 6000.00);
 
--- Volcando datos para la tabla lobos.productos: ~20 rows (aproximadamente)
+-- Volcando datos para la tabla ifts_n18_adb_tp_alfa_lobo.productos: ~20 rows (aproximadamente)
 INSERT INTO `productos` (`ID_Productos`, `Nombre`, `Descripcion`, `Precio_Unitario`, `Stock`, `Fecha_Alta`, `ID_Estado_Producto`, `ID_Categoria`) VALUES
 	(1, 'Remera H&M', 'Remera rosa oversize', 14000.00, 1, '2023-01-10', 1, 1),
 	(2, 'Pantalón Adidas', 'Pantalón deportivo negro', 2500.00, 1, '2023-02-15', 1, 3),
