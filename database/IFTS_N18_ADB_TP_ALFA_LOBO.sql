@@ -7,14 +7,14 @@ USE IFTS_N18_ADB_TP_ALFA_LOBO;
 # Creamos la tabla Clientes
 CREATE TABLE IF NOT EXISTS Clientes(
 	ID_Clientes INT NOT NULL PRIMARY KEY AUTO_INCREMENT,  
-   DNI INT(9) NOT NULL UNIQUE,
-   Nombre VARCHAR(30) NOT NULL,
-   Apellido VARCHAR(50) NOT NULL,
-   Direccion VARCHAR(75) NOT NULL,
-   Email VARCHAR(60) NOT NULL,
-   Telefono VARCHAR(15) NOT NULL,
-   Sexo CHAR(1),
-   Fecha_Nacimiento DATE
+	DNI INT(9) NOT NULL UNIQUE,
+	Nombre VARCHAR(30) NOT NULL,
+	Apellido VARCHAR(50) NOT NULL,
+	Direccion VARCHAR(75) NOT NULL,
+	Email VARCHAR(60) NOT NULL,
+	Telefono VARCHAR(15) NOT NULL,
+	Sexo CHAR(1),
+	Fecha_Nacimiento DATE
 );
 
 # Creamos la tabla Estados

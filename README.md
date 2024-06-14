@@ -85,8 +85,8 @@ CREATE TABLE IF NOT EXISTS Productos (
     Fecha_Alta DATE,
     ID_Estado_Producto INT NOT NULL,
     ID_Categoria INT NOT NULL,
-    FOREIGN KEY (ID_Estado_Producto) REFERENCES lobos.estados_productos(ID_Estados),
-    FOREIGN KEY (ID_Categoria) REFERENCES lobos.categorias_productos(ID_Categorias)
+    FOREIGN KEY (ID_Estado_Producto) REFERENCES IFTS_N18_ADB_TP_ALFA_LOBO.estados_productos(ID_Estados),
+    FOREIGN KEY (ID_Categoria) REFERENCES IFTS_N18_ADB_TP_ALFA_LOBO.categorias_productos(ID_Categorias)
 );
 ```
 
@@ -128,9 +128,9 @@ CREATE TABLE IF NOT EXISTS Pedidos(
     Cantidad_Productos INT(2),
     Fecha_Pedido DATETIME, 
     Valor_Total DECIMAL(10, 2),
-    FOREIGN KEY (ID_Cliente) REFERENCES lobos.Clientes(ID_Clientes),
-    FOREIGN KEY (ID_Metodo_Pago) REFERENCES lobos.Metodo_pagos(ID_Metodo_Pago),
-    FOREIGN KEY (ID_Estado_Pago) REFERENCES lobos.Estado_Pagos(ID_Estado_Pago)
+    FOREIGN KEY (ID_Cliente) REFERENCES IFTS_N18_ADB_TP_ALFA_LOBO.Clientes(ID_Clientes),
+    FOREIGN KEY (ID_Metodo_Pago) REFERENCES IFTS_N18_ADB_TP_ALFA_LOBO.Metodo_pagos(ID_Metodo_Pago),
+    FOREIGN KEY (ID_Estado_Pago) REFERENCES IFTS_N18_ADB_TP_ALFA_LOBO.Estado_Pagos(ID_Estado_Pago)
 );
 ```
 
@@ -141,8 +141,8 @@ CREATE TABLE IF NOT EXISTS Detalle_Pedidos(
     ID_Detalle_Pedidos INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     ID_Pedido INT NOT NULL, 
     ID_Producto INT NOT NULL,
-    FOREIGN KEY (ID_PEDIDO) REFERENCES lobos.pedidos(ID_Pedidos),
-    FOREIGN KEY (ID_PRODUCTO) REFERENCES lobos.productos(ID_Productos)
+    FOREIGN KEY (ID_PEDIDO) REFERENCES IFTS_N18_ADB_TP_ALFA_LOBO.pedidos(ID_Pedidos),
+    FOREIGN KEY (ID_PRODUCTO) REFERENCES IFTS_N18_ADB_TP_ALFA_LOBO.productos(ID_Productos)
 );
 ```
 
@@ -295,7 +295,7 @@ VALUES
 
 ## **_REPORTES_**
 
-### - Listar nombre de clientes, cantidad de productos y valor total de los pedidos con estado pendiente
+### - Listar nombre de clientes, cantidad de productos y valor total de los pedidos con estado pendiente de envio
 
 ```sql
 SELECT 
