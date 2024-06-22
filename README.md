@@ -344,7 +344,7 @@ SELECT MONTH(Fecha_Pedido) AS Mes, YEAR(Fecha_Pedido) AS Año, COUNT(*) AS Total
 ## **_PRESENTACION DEL PROYECTO <sup>en ppt</sup>_**
 
 > [!NOTE]
-> Puedes descargarlo aquí: [Presentacion del proyecto en formato .PPTX](database/Lolu%20BDD.pptx)
+> Puedes descargarlo aquí: [Presentación del proyecto en formato .PPTX](database/Lolu%20BDD.pptx)
 
 
 ## COLABORADORES
