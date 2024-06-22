@@ -334,18 +334,18 @@ SELECT MONTH(Fecha_Pedido) AS Mes, YEAR(Fecha_Pedido) AS Año, COUNT(*) AS Total
 
 ## **_DIAGRAMA DE TABLAS NORMALIZADO <sup>en 3ra forma normal_</sup>**
 
-> [!IMPORTANT]
-> Proximamente.
+![](img/Tablas.png)
 
 ## **_DICCIONARIO DE DATOS_**
 
 > [!NOTE]
-> Puedes Descargarlo aqui: [Diccionario de datos](database/Diccionario%20de%20datos%20TP.sql "Diccionario de datos")
+> Puedes descargarlo aquí: [Diccionario de datos](database/Diccionario%20de%20datos%20TP.sql "Diccionario de datos")
 
 ## **_PRESENTACION DEL PROYECTO <sup>en ppt</sup>_**
 
-> [!IMPORTANT]
-> Proximamente con link de descarga.
+> [!NOTE]
+> Puedes descargarlo aquí: [Presentacion del proyecto en formato .PPTX](database/Lolu%20BDD.pptx)
+
 
 ## COLABORADORES
 
