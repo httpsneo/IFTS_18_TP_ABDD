@@ -334,8 +334,7 @@ SELECT MONTH(Fecha_Pedido) AS Mes, YEAR(Fecha_Pedido) AS Año, COUNT(*) AS Total
 
 ## **_DIAGRAMA DE TABLAS NORMALIZADO <sup>en 3ra forma normal_</sup>**
 
-> [!IMPORTANT]
-> Proximamente.
+![](img/Tablas.png)
 
 ## **_DICCIONARIO DE DATOS_**
 
@@ -344,8 +343,9 @@ SELECT MONTH(Fecha_Pedido) AS Mes, YEAR(Fecha_Pedido) AS Año, COUNT(*) AS Total
 
 ## **_PRESENTACION DEL PROYECTO <sup>en ppt</sup>_**
 
-> [!IMPORTANT]
-> Proximamente con link de descarga.
+> [!NOTE]
+> Puedes Descargarlo aqui: [Presentacion del proyecto en formato .PPTX](database/Lolu%20BDD.pptx)
+
 
 ## COLABORADORES
 
