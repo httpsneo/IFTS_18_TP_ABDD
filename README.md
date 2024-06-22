@@ -22,7 +22,7 @@
 
 <!-- TODO: REVER ESTO  -->
 
-> El objetivo de este sistema es el de ayudar al cliente a poder organizar su ropa de segunda mano o con fallas de fabrica, de forma fácil y rápida para la venta de las mismas.
+> El objetivo de éste sistema es ayudar al cliente a poder organizar su ropa de segunda mano o con fallas de fábrica, de forma fácil y rápida para la venta de las mismas.
 
 ## **_CREACION DE LA BASE DE DATOS_**
 
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS Clientes(
 );
 ```
 
-### **_Condiciones que deben cumplirse para una aceptacion de usuario_**
+### **_Condiciones que deben cumplirse para una aceptación de usuario_**
 
 - Tener una edad igual o mayor a 16 años
 - Contar con un correo electrónico válido (Se necesita confirmación de correo electrónico)
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS Estados_Productos(
 );
 ```
 
-`Tabla de categorias de los productos`
+`Tabla de categorías de los productos`
 
 ```sql
 CREATE TABLE IF NOT EXISTS Categorias_Productos(
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS Productos (
 );
 ```
 
-`Tabla de Metodos de Pago`
+`Tabla de métodos de pago`
 
 ```sql
 CREATE TABLE IF NOT EXISTS Metodo_Pagos(
@@ -158,7 +158,7 @@ VALUES
 ;
 ```
 
-`Ingresamos categorias disponibles de los productos`
+`Ingresamos categorías disponibles de los productos`
 
 ```sql
 INSERT INTO Categorias_Productos (Estado)
@@ -171,7 +171,7 @@ VALUES
 ;
 ```
 
-`Ingresamos metodos disponibles de pagos`
+`Ingresamos métodos disponibles de pagos`
 
 ```sql
 INSERT INTO Metodo_Pagos (Tipo_Pago)
@@ -295,7 +295,7 @@ VALUES
 
 ## **_REPORTES_**
 
-### - Listar nombre de clientes, cantidad de productos y valor total de los pedidos con estado pendiente de envio
+### - Listar nombre de clientes, cantidad de productos y valor total de los pedidos con estado pendiente de envío
 
 ```sql
 SELECT 
@@ -328,7 +328,7 @@ SELECT Nombre, Precio_Unitario FROM Productos WHERE Precio_Unitario <= 5000.00;
 SELECT MONTH(Fecha_Pedido) AS Mes, YEAR(Fecha_Pedido) AS Año, COUNT(*) AS Total_Ventas FROM Pedidos GROUP BY YEAR(Fecha_Pedido), MONTH(Fecha_Pedido) ORDER BY Año, Mes;
 ```
 
-## **_DIAGRAMA ENTIDAD RELACION <sup>(DER)</sup>_**
+## **_DIAGRAMA ENTIDAD RELACIÓN <sup>(DER)</sup>_**
 
 ![DIAGRAMA ENTIDAD RELACION](img/DER.jpeg)
 
@@ -339,12 +339,12 @@ SELECT MONTH(Fecha_Pedido) AS Mes, YEAR(Fecha_Pedido) AS Año, COUNT(*) AS Total
 ## **_DICCIONARIO DE DATOS_**
 
 > [!NOTE]
-> Puedes descargarlo aquí: [Diccionario de datos](database/Diccionario%20de%20datos%20TP.sql "Diccionario de datos")
+> Puedes verlo aquí: [Diccionario de datos](database/Diccionario%20de%20datos%20TP.sql "Diccionario de datos")
 
-## **_PRESENTACION DEL PROYECTO <sup>en ppt</sup>_**
+## **_PRESENTACIÓN DEL PROYECTO <sup>en ppt</sup>_**
 
 > [!NOTE]
-> Puedes descargarlo aquí: [Presentación del proyecto en formato .PPTX](database/Lolu%20BDD.pptx)
+> Puedes verlo aqui: [Presentación del proyecto en formato .PPTX](database/Lolu%20BDD.pptx)
 
 
 ## COLABORADORES
